@@ -12,7 +12,7 @@ import ImageButton from "./ImageButton";
 
 export default class TitleBar extends Component {
 
-    static propTypes = {
+    /* static propTypes = {
         leftIcon: React.PropTypes.number,
         rightIcon: React.PropTypes.number,
         rightTitle: React.PropTypes.string,
@@ -20,7 +20,7 @@ export default class TitleBar extends Component {
         rightIconPress: React.PropTypes.func,
         bgColor:React.PropTypes.string,
         titleColor:React.PropTypes.string,
-    };
+    }; */
 
     static defaultProps = {
         leftIcon: Images.ic_back,

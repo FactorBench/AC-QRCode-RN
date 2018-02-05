@@ -358,7 +358,7 @@ class QRScannerRectView extends Component {
  * 扫描界面
  */
 export default class QRScannerView extends Component {
-    static propTypes = {
+    /* static propTypes = {
         maskColor: React.PropTypes.string,
         borderColor: React.PropTypes.string,
         cornerColor: React.PropTypes.string,
@@ -384,7 +384,7 @@ export default class QRScannerView extends Component {
         isShowScanBar:React.PropTypes.bool,
         bottomMenuStyle:React.PropTypes.object,
         onScanResultReceived:React.PropTypes.func,
-    };
+    }; */
 
     constructor(props) {
         super(props);
@@ -398,41 +398,40 @@ export default class QRScannerView extends Component {
                 <Camera
                     onBarCodeRead={this.props.onScanResultReceived}
                     style={{flex: 1}}
-                >
-                    {/*绘制顶部标题栏组件*/}
-                    {this.props.renderTopBarView()}
+                />
 
-                    {/*绘制扫描遮罩*/}
-                    <QRScannerRectView
-                        maskColor={this.props.maskColor}
-                        cornerColor={this.props.cornerColor}
-                        borderColor={this.props.borderColor}
-                        rectHeight={this.props.rectHeight}
-                        rectWidth={this.props.rectWidth}
-                        borderWidth={this.props.borderWidth}
-                        cornerBorderWidth={this.props.cornerBorderWidth}
-                        cornerBorderLength={this.props.cornerBorderLength}
-                        isLoading={this.props.isLoading}
-                        cornerOffsetSize={this.props.cornerOffsetSize}
-                        isCornerOffset={this.props.isCornerOffset}
-                        bottomMenuHeight={this.props.bottomMenuHeight}
-                        scanBarAnimateTime={this.props.scanBarAnimateTime}
-                        scanBarColor={this.props.scanBarColor}
-                        scanBarHeight={this.props.scanBarHeight}
-                        scanBarMargin={this.props.scanBarMargin}
-                        hintText={this.props.hintText}
-                        hintTextStyle={this.props.hintTextStyle}
-                        scanBarImage={this.props.scanBarImage}
-                        hintTextPosition={this.props.hintTextPosition}
-                        isShowScanBar={this.props.isShowScanBar}
-                    />
+                {/*绘制扫描遮罩*/}
+                <QRScannerRectView
+                    maskColor={this.props.maskColor}
+                    cornerColor={this.props.cornerColor}
+                    borderColor={this.props.borderColor}
+                    rectHeight={this.props.rectHeight}
+                    rectWidth={this.props.rectWidth}
+                    borderWidth={this.props.borderWidth}
+                    cornerBorderWidth={this.props.cornerBorderWidth}
+                    cornerBorderLength={this.props.cornerBorderLength}
+                    isLoading={this.props.isLoading}
+                    cornerOffsetSize={this.props.cornerOffsetSize}
+                    isCornerOffset={this.props.isCornerOffset}
+                    bottomMenuHeight={this.props.bottomMenuHeight}
+                    scanBarAnimateTime={this.props.scanBarAnimateTime}
+                    scanBarColor={this.props.scanBarColor}
+                    scanBarHeight={this.props.scanBarHeight}
+                    scanBarMargin={this.props.scanBarMargin}
+                    hintText={this.props.hintText}
+                    hintTextStyle={this.props.hintTextStyle}
+                    scanBarImage={this.props.scanBarImage}
+                    hintTextPosition={this.props.hintTextPosition}
+                    isShowScanBar={this.props.isShowScanBar}
+                />
 
-                    {/*绘制底部操作栏*/}
-                    <View style={[styles.buttonsContainer, this.props.bottomMenuStyle]}>
-                        {this.props.renderBottomMenuView()}
-                    </View>
+                {/*绘制顶部标题栏组件*/}
+                {this.props.renderTopBarView()}
 
-                </Camera>
+                {/*绘制底部操作栏*/}
+                <View style={[styles.buttonsContainer, this.props.bottomMenuStyle]}>
+                    {this.props.renderBottomMenuView()}
+                </View>
             </View>
         );
     }
