@@ -4,6 +4,7 @@
  * Desc:
  */
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import Camera from 'react-native-camera';
 import
 {
@@ -349,7 +350,8 @@ class QRScannerRectView extends Component {
         Animated.timing(this.state.animatedValue, {
             toValue: this.props.rectHeight,
             duration: this.props.scanBarAnimateTime,
-            easing: Easing.linear
+            easing: Easing.linear,
+            sInteraction: false
         }).start(() => this.scannerLineMove());
     }
 }
@@ -358,33 +360,33 @@ class QRScannerRectView extends Component {
  * 扫描界面
  */
 export default class QRScannerView extends Component {
-    /* static propTypes = {
-        maskColor: React.PropTypes.string,
-        borderColor: React.PropTypes.string,
-        cornerColor: React.PropTypes.string,
-        borderWidth: React.PropTypes.number,
-        cornerBorderWidth: React.PropTypes.number,
-        cornerBorderLength: React.PropTypes.number,
-        rectHeight: React.PropTypes.number,
-        rectWidth: React.PropTypes.number,
-        isLoading: React.PropTypes.bool,
-        isCornerOffset: React.PropTypes.bool,//边角是否偏移
-        cornerOffsetSize: React.PropTypes.number,
-        bottomMenuHeight: React.PropTypes.number,
-        scanBarAnimateTime: React.PropTypes.number,
-        scanBarColor: React.PropTypes.string,
-        scanBarImage: React.PropTypes.any,
-        scanBarHeight: React.PropTypes.number,
-        scanBarMargin: React.PropTypes.number,
-        hintText: React.PropTypes.string,
-        hintTextStyle: React.PropTypes.object,
-        hintTextPosition:React.PropTypes.number,
-        renderTopBarView:React.PropTypes.func,
-        renderBottomMenuView:React.PropTypes.func,
-        isShowScanBar:React.PropTypes.bool,
-        bottomMenuStyle:React.PropTypes.object,
-        onScanResultReceived:React.PropTypes.func,
-    }; */
+    static propTypes = {
+        maskColor: PropTypes.string,
+        borderColor: PropTypes.string,
+        cornerColor: PropTypes.string,
+        borderWidth: PropTypes.number,
+        cornerBorderWidth: PropTypes.number,
+        cornerBorderLength: PropTypes.number,
+        rectHeight: PropTypes.number,
+        rectWidth: PropTypes.number,
+        isLoading: PropTypes.bool,
+        isCornerOffset: PropTypes.bool,//边角是否偏移
+        cornerOffsetSize: PropTypes.number,
+        bottomMenuHeight: PropTypes.number,
+        scanBarAnimateTime: PropTypes.number,
+        scanBarColor: PropTypes.string,
+        scanBarImage: PropTypes.any,
+        scanBarHeight: PropTypes.number,
+        scanBarMargin: PropTypes.number,
+        hintText: PropTypes.string,
+        hintTextStyle: PropTypes.object,
+        hintTextPosition: PropTypes.number,
+        renderTopBarView: PropTypes.func,
+        renderBottomMenuView: PropTypes.func,
+        isShowScanBar: PropTypes.bool,
+        bottomMenuStyle: PropTypes.object,
+        onScanResultReceived: PropTypes.func,
+    };
 
     constructor(props) {
         super(props);
